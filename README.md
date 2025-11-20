@@ -188,7 +188,7 @@ curl -X POST "http://localhost:8000/process-claim" \
 
 1. **Claude (Anthropic)** - Primary assistant for:
    - Architecture design
-   - Code generation
+   - Code autocompletion
    - Prompt engineering
    - Documentation
 
