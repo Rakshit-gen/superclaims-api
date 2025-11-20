@@ -60,7 +60,7 @@ PDF Upload → Classification → Text Extraction → Agent Processing → Valid
 ### Prerequisites
 
 - Python 3.10+
-- OpenAI API key
+- GROQ API key
 
 ### Installation
 
@@ -78,8 +78,8 @@ cp .env.example .env
 
 Edit `.env` and add your OpenAI API key:
 ```
-OPENAI_API_KEY=sk-...
-LLM_MODEL=gpt-4o-mini
+GROQ_API_KEY=...
+LLM_MODEL=llama-3.3-70b-versatile
 ```
 
 ### Running the Server
