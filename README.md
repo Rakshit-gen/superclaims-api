@@ -66,14 +66,14 @@ curl -X POST http://localhost:8000/process-claim \
 | Variable | Default | What it does |
 |---|---|---|
 | `GROQ_API_KEY` | required | Groq key. Calls go to Groq's OpenAI-compatible endpoint |
-| `LLM_MODEL` | `llama-3.1-70b-versatile` in code, `llama-3.3-70b-versatile` in `.env.example` | Model for every step. Use the 3.3 one; the 3.1 model has been retired |
-| `MAX_FILE_SIZE_MB` | 10 | Read from config but not enforced yet |
+| `LLM_MODEL` | `llama-3.3-70b-versatile` | Model for every step |
+| `MAX_FILE_SIZE_MB` | 10 | Per-file upload limit. Bigger files get a `413` |
 
 ## API
 
 | Method | Path | What it does |
 |---|---|---|
-| `POST` | `/process-claim` | Multipart upload, field name `files`, one or more `.pdf` files |
+| `POST` | `/process-claim` | Multipart upload, field name `files`, one or more `.pdf` files. `400` for a non-PDF, `413` for a file over the size limit |
 | `GET` | `/health` | `{"status": "healthy"}` |
 
 Response, trimmed:
